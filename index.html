@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Include A-Frame and MindAR Face Tracking Library -->
+    <script src="https://aframe.io"></script>
+    <script src="https://jsdelivr.net"></script>
+  </head>
+  <body>
+    <!-- Setup the mindar-face scene -->
+    <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-assets>
+        <!-- LOAD YOUR GLB MODEL HERE -->
+        <a-asset-item id="myModel" src="YOUR_MODEL_NAME.glb"></a-asset-item>
+      </a-assets>
+
+      <a-camera active="false" position="0 0 0"></a-camera>
+
+      <!-- Anchor target options: forehead, nose, leftEye, rightEye, leftCheek, rightCheek, mouthDimple, chin -->
+       <!-- 168 is between the eyes (forehead/nose bridge) -->
+        <!-- Bind your GLB model here. Adjust position/scale to sit perfectly on the face -->
+        <a-gltf-model rotation="0 0 0" position="0 0 0" scale="1 1 1" src="#myModel"></a-gltf-model>
+      
+    </a-scene>
+  </body>
+</html>
